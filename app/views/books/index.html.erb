@@ -1,3 +1,27 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
-新規フォームとデータ
+<h2>Books</h2>
+<ul>
+  <li>Title</li>
+  <li>Body</li>
+</ul>
+
+<!--↑一覧-->
+<!--↓投稿-->
+<!--, url: '/books', method: :post -->
+<h3>New book</h3>
+<!-- form_with部分 -->
+<!--< form_with model: Book.new do |f| %!>-->
+<%= form_with model: @book, url: '/books/index', method: :post do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+
+
+
+
+
