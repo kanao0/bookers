@@ -1,21 +1,29 @@
 <h2>Books</h2>
-<!--<%= @books.each do |book| %>-->
-<!--  <p>Title</p>-->
-<!--  <span><%= book.title %></span>-->
-<!--    <p>Body</p>-->
-<!--  <span><%= book.body %></span>-->
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+ 
+  <!--データを出す-->
+<% @books.each do |book| %>   
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      showeditの
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<!--<% end %>-->
 
 
-<ul>
-  <li>Title</li>
-  <li>Body</li>
-</ul>
 
 <!--↑一覧-->
 <!--↓投稿-->
-<!--, url: '/books', method: :post -->
 <h3>New book</h3>
 <!-- form_with部分 -->
 <!--投稿できる-->
@@ -30,11 +38,5 @@
 
   <%= f.submit 'Create Book' %>
 <% end %>
-
-
-<!--投稿できない-->
-<!--<!%= form_with model: @Book do |f| %>-->
-
-
 
 
