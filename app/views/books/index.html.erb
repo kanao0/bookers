@@ -13,7 +13,9 @@
     <tr>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
-      showeditの
+      <td><%= link_to "Show", book_path(book.id) %></td>
+      <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
     </tr>
     <% end %>
   </tbody>
@@ -28,7 +30,6 @@
 <!-- form_with部分 -->
 <!--投稿できる-->
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
-<!--<!%= form_with model: @book do |f| %>-->
 
   <h4>Title</h4>
   <%= f.text_field :title %>

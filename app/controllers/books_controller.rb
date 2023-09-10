@@ -4,12 +4,13 @@ class BooksController < ApplicationController
   # end
 
   def create
-    # 保存するための箱を作る
+    # 保存するための箱を作る名前はbook
     book = Book.new(book_params)
 
 # データベースにデータ保存する
     book.save
-# データベースに保存が終わったら詳細画面へ行く
+# データベースに保存が終わったら詳細画面へ行くbookの→showアクション
+    # redirect_to prefix_path(渡す.id)
     redirect_to book_path(book.id)
 
 
@@ -23,10 +24,21 @@ class BooksController < ApplicationController
   end
 
   def show
+    # Bookモデルのデータみつけてきてーデータの箱は@bookって名前にしたよ
     @book = Book.find(params[:id])
   end
 
   def edit
+    # book = Book.find(params[:id])  # データ（レコード）を1件取得
+    # book.destroy  # データ（レコード）を削除
+    # redirect_to books_path  # 投稿一覧画面へリダイレクト  
+  end
+  
+  def destroy
+    book = Book.find(params[:id])  # データ（レコード）を1件取得
+    
+    book.destroy  # データ（レコード）を削除
+    redirect_to books_path  # 投稿一覧画面へリダイレクト  
   end
 
 private
