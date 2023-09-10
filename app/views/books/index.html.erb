@@ -1,4 +1,13 @@
 <h2>Books</h2>
+<!--<%= @books.each do |book| %>-->
+<!--  <p>Title</p>-->
+<!--  <span><%= book.title %></span>-->
+<!--    <p>Body</p>-->
+<!--  <span><%= book.body %></span>-->
+
+<!--<% end %>-->
+
+
 <ul>
   <li>Title</li>
   <li>Body</li>
@@ -9,8 +18,10 @@
 <!--, url: '/books', method: :post -->
 <h3>New book</h3>
 <!-- form_with部分 -->
-<!--< form_with model: Book.new do |f| %!>-->
-<%= form_with model: @book, url: '/books/index', method: :post do |f| %>
+<!--投稿できる-->
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<!--<!%= form_with model: @book do |f| %>-->
+
   <h4>Title</h4>
   <%= f.text_field :title %>
 
@@ -21,6 +32,8 @@
 <% end %>
 
 
+<!--投稿できない-->
+<!--<!%= form_with model: @Book do |f| %>-->
 
 
 

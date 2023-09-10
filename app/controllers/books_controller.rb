@@ -1,21 +1,24 @@
 class BooksController < ApplicationController
-  def new
-    @book = Book.new
-  end
+  # 要らない
+  # def new
+  # end
 
   def create
-    # book = Book.new(book_params)
+    # 保存するための箱を作る
+    book = Book.new(book_params)
 
-    # book.save
-    @book = Book.new(book_params)
+# データベースにデータ保存する
+    book.save
 
-    @book.save
 
     redirect_to '/books/show'
 
   end
 
   def index
+    # データを入れるための箱を作る
+    @book = Book.new
+    @books = Book.all
   end
 
   def show
@@ -32,3 +35,8 @@ private
 
 
 end
+
+
+    # @book = Book.new(book_params)
+
+    # @book.save
