@@ -1,3 +1,4 @@
+  <!--showアクションで探してきた@bookの中からtitle,bodyを表示-->
   <p>
     Title:
     <%= @book.title %>
@@ -8,7 +9,8 @@
     <%= @book.body %>
   </p>
   
-
+<!--showアクションで探してきたデータ編集する？edit(編集画面へ)-->
 <%= link_to "Edit", edit_book_path(@book.id) %> |
+<!--back(一覧画面へ)-->
 <%= link_to "Back" , books_path %>
-<!--edit(編集画面へ)back(一覧画面へ)-->
+
