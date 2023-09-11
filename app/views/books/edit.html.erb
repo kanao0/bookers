@@ -1,6 +1,14 @@
 <!--編集画面-->
 <h2>Editing Book</h2>
-<!--editアクションで探してきたデータ表示中身が入ってるからupdate処理してくれる？-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<!--editアクションで探してきたデータ表示中身が入ってるから自動的にupdate処理ね！-->
 <%= form_with model: @book do |f| %>
 
 
