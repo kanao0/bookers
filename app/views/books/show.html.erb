@@ -1,18 +1,20 @@
   <!--showアクションで探してきた@bookの中からtitle,bodyを表示-->
-   <p><%= flash[:notice] %></p>
-
-  <p>
-    Title:
-    <%= @book.title %>
-  </p>
-
-  <p>
-    Body:
-    <%= @book.body %>
-  </p>
+  <div class="show">
+    <p class="notice"><%= flash[:notice] %></p>
+  
+    <div class="show-title">
+      <b>Title:</b>
+      <%= @book.title %>
+    </div>
+  
+    <div class="show-body">
+      <b>Body:</b>
+      <%= @book.body %>
+    </div>
+  </div>
   
 <!--showアクションで探してきたデータ編集する？edit(編集画面へ)-->
-<%= link_to "Edit", edit_book_path(@book.id) %> |
+<div class="sh_ed_bk"><%= link_to "Edit", edit_book_path(@book.id) %> |
 <!--back(一覧画面へ)-->
-<%= link_to "Back" , books_path %>
+<%= link_to "Back" , books_path %></div>
 

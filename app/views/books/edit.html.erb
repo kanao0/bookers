@@ -8,24 +8,27 @@
     <% end %>
   </ul>
 <% end %>
-<!--editアクションで探してきたデータ表示中身が入ってるから自動的にupdate処理ね！-->
-<%= form_with model: @book do |f| %>
 
-
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+<div class="form">
+  <!--editアクションで探してきたデータ表示中身が入ってるから自動的にupdate処理ね！-->
+  <%= form_with model: @book do |f| %>
   
-  <h4>Body</h4>
-  <%= f.text_area :body %>
   
-  <%= f.submit 'Update Book' %>
+    <div class="form-title">Title</div>
+    <%= f.text_field :title %>
+    
+    <div class="form-body">Body</div>
+    <%= f.text_area :body %>
+    
+    <div class="form-send"><%= f.submit 'Update Book' %></div>
+    
+  <% end %>
+</div>  
   
-<% end %>
-
-
-<!--詳細画面と一覧画面-->
-<p><%= link_to "Show" , book_path %> | 
-   <%= link_to "Back" , books_path %>
-</p>
+  <!--詳細画面と一覧画面-->
+  <div class="sh_ed_bk">
+    <%= link_to "Show" , book_path %> | 
+     <%= link_to "Back" , books_path %>
+  </div>
 
 
