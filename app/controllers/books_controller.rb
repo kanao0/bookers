@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
   def create
     # データを保存するための箱を作る名前は@book
-    @book = Book.new(@book_params)
+    @book = Book.new(book_params)
 
     if @book.save
+
       redirect_to book_path(@book.id)
+      flash[:notice] = "Book was successfully created."    
     else
       @books = Book.all
       render :index
@@ -38,7 +40,9 @@ class BooksController < ApplicationController
     
     if @book.update(book_params)
     
+      flash[:notice] = "Book was successfully created."    
       redirect_to book_path(@book.id)
+      
     else
       render :edit
     end
@@ -61,24 +65,4 @@ class BooksController < ApplicationController
 end
 
 
-
-
-    # def create
-    #   # 保存するための箱を作る名前はbook
-    #   book = Book.new(book_params)
   
-    #   book.save
-      
-    #   redirect_to book_path(book.id)
-  
-    # end
-    
-    
-      def update
-    updateされたデータを入れる箱
-    book = Book.find(params[:id])
-    
-    book.update(book_params)
-    
-    redirect_to book_path(book.id)  
-  end

@@ -21,12 +21,11 @@
   </tbody>
 </table>
 
-
-
-
 <!--↑一覧-->
 <!--↓投稿-->
+
 <h3>New book</h3>
+
 <% if @book.errors.any? %>
   <%= @book.errors.count %>error prohibited this book from being saved:
   <ul>
@@ -48,5 +47,4 @@
 
   <%= f.submit 'Create Book' %>
 <% end %>
-
 
